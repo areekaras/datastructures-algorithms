@@ -19,26 +19,34 @@ class LinkList {
         head = newNode
     }
 
-    
+    // O(1)
     func getFirst() -> Int? {
         return head?.data
     }
 
+    // O(n)
     func addBack(_ data: Int) {
-        var newNode = Node(data)
+        let newNode = Node(data)
         
-        guard let head = head else {
+        guard let tailNode = tail() else {
             head = newNode
             return
         }
+        
+        tailNode.next = newNode
+    }
+    
+    // O(n)
+    func tail() -> Node? {
+        guard let head = head else { return nil }
         
         var node = head
         while let next = node.next {
             node = next
         }
-        
-        node.next = newNode
+        return node
     }
+
 
     func getLast() -> Int? {
         return nil
