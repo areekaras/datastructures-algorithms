@@ -25,6 +25,19 @@ class LinkList {
     }
 
     func addBack(_ data: Int) {
+        var newNode = Node(data)
+        
+        guard let head = head else {
+            head = newNode
+            return
+        }
+        
+        var node = head
+        while let next = node.next {
+            node = next
+        }
+        
+        node.next = newNode
     }
 
     func getLast() -> Int? {
@@ -66,6 +79,7 @@ class LinkList {
     }
 }
 
+//MARK: - Add Front
 let linkedList = LinkList()
 linkedList.addFront(3)
 linkedList.addFront(2)
@@ -74,6 +88,20 @@ linkedList.addFront(1)
 linkedList.printLinkedList() // [1, 2, 3]
 
 linkedList.addFront(4)
-linkedList.printLinkedList() //[4, 1, 2, 3]
+linkedList.printLinkedList() // [4, 1, 2, 3]
 
+//MARK: - Get Last
 linkedList.getFirst() //4
+
+
+//MARK: - Add Back
+linkedList.addBack(5)
+linkedList.addBack(6)
+
+linkedList.printLinkedList() // [4, 1, 2, 3, 5, 6]
+
+let linkedList1 = LinkList()
+linkedList1.addBack(1)
+linkedList1.addBack(2)
+linkedList1.addBack(3)
+linkedList1.printLinkedList() // [1, 2, 3]
