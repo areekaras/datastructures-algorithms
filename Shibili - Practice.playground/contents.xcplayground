@@ -5,5 +5,7 @@
         <page name='2 - Array - Cyclic rotation'/>
         <page name='2 - Array - Dash phone number'/>
         <page name='2 - Array- Contact Match'/>
+        <page name='3 - LinkedList - Intro'/>
+        <page name='3 - LinkedList - Skelton'/>
     </pages>
 </playground>
