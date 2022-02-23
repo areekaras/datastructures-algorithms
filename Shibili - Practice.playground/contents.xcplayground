@@ -3,5 +3,6 @@
     <pages>
         <page name='1 - Big O - Check common in Array'/>
         <page name='2 - Array - Cyclic rotation'/>
+        <page name='2 - Array - Dash phone number'/>
     </pages>
 </playground>
