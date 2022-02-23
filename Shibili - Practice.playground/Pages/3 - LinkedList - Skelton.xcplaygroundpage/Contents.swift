@@ -21,7 +21,7 @@ class LinkList {
 
     
     func getFirst() -> Int? {
-        return 0
+        return head?.data
     }
 
     func addBack(_ data: Int) {
@@ -75,3 +75,5 @@ linkedList.printLinkedList() // [1, 2, 3]
 
 linkedList.addFront(4)
 linkedList.printLinkedList() //[4, 1, 2, 3]
+
+linkedList.getFirst() //4
