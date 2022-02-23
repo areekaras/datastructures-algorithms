@@ -47,9 +47,9 @@ class LinkList {
         return node
     }
 
-
+    // O(n)
     func getLast() -> Int? {
-        return nil
+        return tail()?.data
     }
 
     func insert(position: Int, data: Int) {
@@ -101,6 +101,9 @@ linkedList.printLinkedList() // [4, 1, 2, 3]
 //MARK: - Get Last
 linkedList.getFirst() //4
 
+let linkedList1 = LinkList()
+linkedList1.getFirst() // nil
+
 
 //MARK: - Add Back
 linkedList.addBack(5)
@@ -108,8 +111,16 @@ linkedList.addBack(6)
 
 linkedList.printLinkedList() // [4, 1, 2, 3, 5, 6]
 
-let linkedList1 = LinkList()
 linkedList1.addBack(1)
 linkedList1.addBack(2)
 linkedList1.addBack(3)
 linkedList1.printLinkedList() // [1, 2, 3]
+
+//MARK: - Get last
+linkedList.getLast() // 6
+linkedList1.getLast() //3
+
+let linkedList2 = LinkList()
+linkedList2.getLast() // nil
+
+
