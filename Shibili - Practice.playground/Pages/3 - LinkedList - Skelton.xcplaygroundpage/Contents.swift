@@ -13,9 +13,13 @@ class Node {
 class LinkList {
     private var head: Node?
         
+    // O(1)
     func addFront(_ data: Int) {
+        let newNode = Node(data, head)
+        head = newNode
     }
 
+    
     func getFirst() -> Int? {
         return 0
     }
@@ -63,3 +67,11 @@ class LinkList {
 }
 
 let linkedList = LinkList()
+linkedList.addFront(3)
+linkedList.addFront(2)
+linkedList.addFront(1)
+
+linkedList.printLinkedList() // [1, 2, 3]
+
+linkedList.addFront(4)
+linkedList.printLinkedList() //[4, 1, 2, 3]
