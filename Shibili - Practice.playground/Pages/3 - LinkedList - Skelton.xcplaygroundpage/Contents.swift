@@ -58,8 +58,11 @@ func insert(linkedList: LinkListP) {
     linkedList.insert(position: 0, data: -2)       // [-1, 0, 1, 2, 3]
     linkedList.insert(position: 2, data: 5)        // [-2, -1, 5, 0, 1, 2, 3]
     linkedList.insert(position: 4, data: 6)        // [-2, -1, 5, 0, 6, 1, 2, 3]
-    //linkedList2.insert(position: 10, data: 10)      // Crash!!
+//    linkedList2.insert(position: 10, data: 10)      // Crash!!
     linkedList.printLinkedList()
 }
 
 insert(linkedList: linkedList2)
+
+let linkedList3 = LinkList()
+insert(linkedList: linkedList3)

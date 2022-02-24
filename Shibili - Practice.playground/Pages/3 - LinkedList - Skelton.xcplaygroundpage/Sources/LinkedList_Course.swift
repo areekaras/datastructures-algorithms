@@ -56,7 +56,22 @@ public class LinkList: LinkListP {
 
     // O(n)
     public func insert(position: Int, data: Int) {
+        guard position >= 0 else { fatalError("Negative Index") }
         
+        guard position > 0 else {
+            addFront(data)
+            return
+        }
+        
+        let newNode = Node(data)
+        var currentNode = head
+        
+        for _ in 0 ..< position - 1 {
+            currentNode = currentNode?.next!
+        }
+        
+        newNode.next = currentNode?.next
+        currentNode?.next = newNode
     }
     
     func deleteFirst() {
