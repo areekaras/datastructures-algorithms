@@ -6,6 +6,7 @@
         <page name='2 - Array - Dash phone number'/>
         <page name='2 - Array- Contact Match'/>
         <page name='3 - LinkedList - Intro'/>
-        <page name='3 - LinkedList - Skelton'/>
+        <page name='3 - LinkedList - Practice'/>
+        <page name='3 - LinkedList - LengthOfLinkedList'/>
     </pages>
 </playground>
