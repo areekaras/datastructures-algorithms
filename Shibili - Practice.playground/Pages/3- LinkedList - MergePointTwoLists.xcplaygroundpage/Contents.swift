@@ -99,6 +99,45 @@ func findMergeSpaceTime(headA: Node?, headB: Node?) -> Int? {
     return nil
 }
 
+// 3. O(n) - if we already have size of linked lists
+func findMergeInsight(headA: Node?, headB: Node?) -> Int? {
+    //figure out which is longer
+    //Here we have to find the size with length function - so time is not that much effective
+    let sizeA = length(headA)
+    let sizeB = length(headB)
+    
+    let diff = sizeA - sizeB
+    
+    if diff > 0 {
+        return findMergePoint(bigList: (headA, sizeA), smallList: (headB, sizeB), diff: diff)
+    }
+    
+    return findMergePoint(bigList: (headB, sizeB), smallList: (headA, sizeA), diff: abs(diff))
+}
+
+private func findMergePoint(bigList: (head: Node?, size: Int), smallList: (head: Node?, size: Int), diff: Int) -> Int? {
+
+    var currentNodeBig = bigList.head
+    for _ in 0 ..< diff {
+        currentNodeBig = currentNodeBig?.next
+    }
+    
+    var currentNodeSmall = smallList.head
+    for _ in 0 ..< smallList.size {
+        let bigData = currentNodeBig?.data
+        let smallData = currentNodeSmall?.data
+        
+        if bigData == smallData {
+            return bigData
+        }
+        
+        currentNodeBig = currentNodeBig?.next
+        currentNodeSmall = currentNodeSmall?.next
+    }
+    
+    return nil
+}
+
 
 
 // 1 2 3 4 5 6
@@ -119,3 +158,5 @@ printLinkedList(node10)
 findMergeBrute(headA: node1, headB: node10) // 4
 
 findMergeSpaceTime(headA: node1, headB: node10) // 4
+
+findMergeInsight(headA: node1, headB: node10)
