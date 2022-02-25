@@ -113,10 +113,12 @@ public class LinkList: LinkListP {
         prev?.next = prev?.next!.next
     }
     
+    // O(1)
     public var isEmpty: Bool {
         return head == nil
     }
     
+    // O(1)
     public func clear() {
         head = nil
     }
