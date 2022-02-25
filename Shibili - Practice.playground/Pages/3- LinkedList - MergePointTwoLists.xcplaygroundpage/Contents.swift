@@ -78,6 +78,27 @@ func findMergeBrute(headA: Node?, headB: Node?) -> Int? {
     return nil
 }
 
+// 2. O(m + n) -  Trade off space with time
+func findMergeSpaceTime(headA: Node?, headB: Node?) -> Int? {
+    var hashA = [Int: Bool]()
+    
+    var nodeA = headA
+    while let node = nodeA {
+        hashA[node.data] = true
+        nodeA = nodeA?.next
+    }
+    
+    var nodeB = headB
+    while let node = nodeB {
+        if hashA[node.data] == true {
+            return node.data
+        }
+        nodeB = nodeB?.next
+    }
+    
+    return nil
+}
+
 
 
 // 1 2 3 4 5 6
@@ -96,3 +117,5 @@ printLinkedList(node1)
 printLinkedList(node10)
 
 findMergeBrute(headA: node1, headB: node10) // 4
+
+findMergeSpaceTime(headA: node1, headB: node10) // 4
