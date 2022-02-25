@@ -74,13 +74,43 @@ public class LinkList: LinkListP {
         currentNode?.next = newNode
     }
     
-    func deleteFirst() {
+    // O(1) - Used shibili solution
+    public func deleteFirst() {
+        head = head!.next
     }
 
-    func deleteLast() {
+    // O(n) - Used shibili solution
+    public func deleteLast() {
+        guard let _ = head!.next else {
+            head = nil
+            return
+        }
+        
+        var node = head
+        
+        while node?.next?.next != nil {
+            node = node?.next
+        }
+        
+        node?.next = nil
     }
     
-    func delete(at position: Int) {
+    // O(n) - Used shibili solution
+    public func delete(at position: Int) {
+        guard position >= 0 else { fatalError("Negative index error!") }
+        
+        guard position > 0 else {
+            deleteFirst()
+            return
+        }
+        
+        var prev = head
+        
+        for _ in 0 ..< position - 1 {
+            prev = prev!.next
+        }
+        
+        prev?.next = prev?.next!.next
     }
     
     var isEmpty: Bool {

@@ -10,18 +10,18 @@ func addFront(linkedList: LinkListP) {
     linkedList.printLinkedList() // [4, 1, 2, 3]
 }
 
-let linkedList = LinkList()
-addFront(linkedList: linkedList)
+let cLinkedList = LinkList()
+addFront(linkedList: cLinkedList)
 
 //MARK: - Get Last
 func getFirst(linkedList: LinkListP, line: UInt = #line) {
     print("\(linkedList.getFirst() ?? -999999) at line: \(line)")
 }
 
-getFirst(linkedList: linkedList) //4
+getFirst(linkedList: cLinkedList) //4
 
-let linkedList1 = SLinkedList()
-getFirst(linkedList: linkedList1) // -99999 = nil
+let sLinkedList = SLinkedList()
+getFirst(linkedList: sLinkedList) // -99999 = nil
 
 
 //MARK: - Add Back
@@ -33,22 +33,22 @@ func addBack(linkedList: LinkListP, data: [Int]) {
     linkedList.printLinkedList()
 }
 
-addBack(linkedList: linkedList, data: [5, 6])  // [4, 1, 2, 3, 5, 6]
-addBack(linkedList: linkedList1, data: [1, 2, 3]) // [1, 2, 3]
+addBack(linkedList: cLinkedList, data: [5, 6])  // [4, 1, 2, 3, 5, 6]
+addBack(linkedList: sLinkedList, data: [1, 2, 3]) // [1, 2, 3]
 
 //MARK: - Get last
 func getLast(linkedList: LinkListP, line: UInt = #line) {
     print("\(linkedList.getLast() ?? -999999) at line: \(line)")
 }
 
-getLast(linkedList: linkedList) // 6
-getLast(linkedList: linkedList1) //3
+getLast(linkedList: cLinkedList) // 6
+getLast(linkedList: sLinkedList) //3
 
-let linkedList2 = SLinkedList()
-getLast(linkedList: linkedList2) // -99999 = nil
+let sLinkedList1 = SLinkedList()
+getLast(linkedList: sLinkedList1) // -99999 = nil
 
 
-//MARK: - Insert
+//MARK: - Insert at position
 func insert(linkedList: LinkListP) {
     linkedList.insert(position: 0, data: 0)        // [0]
     linkedList.insert(position: 1, data: 1)        // [0, 1]
@@ -62,7 +62,61 @@ func insert(linkedList: LinkListP) {
     linkedList.printLinkedList()
 }
 
-insert(linkedList: linkedList2)
+insert(linkedList: sLinkedList1)
 
-let linkedList3 = LinkList()
-insert(linkedList: linkedList3)
+let cLinkedList1 = LinkList()
+insert(linkedList: cLinkedList1)
+
+
+//MARK: - Delete first
+func deleteFirst(linkedList: LinkListP) {
+    linkedList.deleteFirst()
+    
+    linkedList.printLinkedList()
+}
+
+deleteFirst(linkedList: sLinkedList1) // [-1, 5, 0, 6, 1, 2, 3]
+deleteFirst(linkedList: sLinkedList1) // [5, 0, 6, 1, 2, 3]
+
+let sLinkedList2 = SLinkedList()
+//deleteFirst(linkedList: sLinkedList2) // Crash
+
+
+//MARK: - Delete last
+func deleteLast(linkedList: LinkListP) {
+    linkedList.deleteLast()
+    
+    linkedList.printLinkedList()
+}
+
+deleteLast(linkedList: sLinkedList1) // [5, 0, 6, 1, 2]
+deleteLast(linkedList: sLinkedList1) // [5, 0, 6, 1]
+
+//deleteLast(linkedList: sLinkedList2) // Crash
+
+//MARK: - Delete at position
+func delete(_ linkedList: LinkListP, at position: Int) {
+    linkedList.delete(at: position)
+    
+    linkedList.printLinkedList()
+}
+
+//set up linkedList
+insert(linkedList: sLinkedList1) // [-2, -1, 5, 0, 6, 1, 2, 3, 5, 0, 6, 1]
+
+delete(sLinkedList1, at: 0)     // [-1, 5, 0, 6, 1, 2, 3, 5, 0, 6, 1]
+delete(sLinkedList1, at: 10)    // [-1, 5, 0, 6, 1, 2, 3, 5, 0, 6]
+delete(sLinkedList1, at: 6)     // [-1, 5, 0, 6, 1, 2, 5, 0, 6]
+//delete(sLinkedList1, at: 9)  // Crash
+delete(sLinkedList1, at: 8)     // [-1, 5, 0, 6, 1, 2, 5, 0]
+delete(sLinkedList1, at: 7)     // [-1, 5, 0, 6, 1, 2, 5]
+delete(sLinkedList1, at: 6)     // [-1, 5, 0, 6, 1, 2]
+delete(sLinkedList1, at: 5)     // [-1, 5, 0, 6, 1]
+delete(sLinkedList1, at: 4)     // [-1, 5, 0, 6]
+delete(sLinkedList1, at: 3)     // [-1, 5, 0]
+delete(sLinkedList1, at: 2)     // [-1, 5]
+delete(sLinkedList1, at: 1)     // [-1]
+delete(sLinkedList1, at: 0)     // []
+//delete(sLinkedList1, at: 0)     // Crash
+
+//delete(sLinkedList2, at: 0) // Crash

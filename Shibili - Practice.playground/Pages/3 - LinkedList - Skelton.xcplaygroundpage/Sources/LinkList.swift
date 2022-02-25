@@ -11,5 +11,11 @@ public protocol LinkListP {
     
     func insert(position: Int, data: Int)
     
+    func deleteFirst()
+    
+    func deleteLast()
+    
+    func delete(at position: Int)
+    
     func printLinkedList()
 }
