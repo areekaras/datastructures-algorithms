@@ -8,5 +8,6 @@
         <page name='3 - LinkedList - Intro'/>
         <page name='3 - LinkedList - Practice'/>
         <page name='3 - LinkedList - LengthOfLinkedList'/>
+        <page name='3- LinkedList - MergePointTwoLists'/>
     </pages>
 </playground>
