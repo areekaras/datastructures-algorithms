@@ -44,6 +44,27 @@ func hasCycleSpace(first: Node) -> Bool {
     return false
 }
 
+
+//MARK: - Course solution
+
+//The Tortoise & The Hare method
+func hasCycle(first: Node) -> Bool {
+    var slow: Node? = first
+    var fast: Node? = first
+    
+    while fast != nil && fast?.next != nil {
+        slow = slow?.next
+        fast = fast?.next?.next
+        
+        if slow?.data == fast?.data {
+            return true
+        }
+    }
+    
+    return false
+}
+
+
 let node5 = Node(5)
 let node4 = Node(4)
 let node3 = Node(3)
@@ -57,6 +78,8 @@ node4.next = node5
 node5.next = node3
 
 hasCycleSpace(first: head) //true
+hasCycle(first: head)      // true
 
 node5.next = nil
 hasCycleSpace(first: head) // false
+hasCycle(first: head)      // false
