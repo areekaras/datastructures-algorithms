@@ -120,3 +120,12 @@ delete(sLinkedList1, at: 0)     // []
 //delete(sLinkedList1, at: 0)     // Crash
 
 //delete(sLinkedList2, at: 0) // Crash
+
+
+//MARK: - isEmpty
+
+sLinkedList1.isEmpty // true
+sLinkedList.isEmpty  // false
+
+sLinkedList.clear()
+sLinkedList.isEmpty // true

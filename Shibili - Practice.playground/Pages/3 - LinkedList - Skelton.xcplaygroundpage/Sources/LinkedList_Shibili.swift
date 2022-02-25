@@ -121,11 +121,14 @@ public class SLinkedList: LinkListP {
         prev?.next = prev?.next!.next
     }
     
-    var isEmpty: Bool {
-        return false
+    // O(1)
+    public var isEmpty: Bool {
+        return head == nil
     }
     
-    func clear() {
+    // O(1)
+    public func clear() {
+        head = nil
     }
     
     public func printLinkedList() {
