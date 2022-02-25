@@ -140,6 +140,44 @@ private func findMergePoint(bigList: (head: Node?, size: Int), smallList: (head:
 
 
 
+// MARK: - Course solution - #3rd approach
+func findMergePointInsight(headA: Node?, headB: Node?) -> Int? {
+    //Figure out which is longer
+    let m = length(headA) // O(m)
+    let n = length(headB) // O(n)
+    
+    var currentA = headA
+    var currentB = headB
+    
+    //Swap if necessary
+    if n > m {
+        let temp = currentA
+        currentA = currentB
+        currentB = temp
+    }
+    
+    let diff = abs(m - n)
+    
+    // remove extra length nodes
+    for _ in 1 ... diff { // O(n)
+        currentA = currentA?.next
+    }
+    
+    while let _ = currentB { // O(n)
+        let dataA = currentA?.data
+        let dataB = currentB?.data
+        if dataA == dataB {
+            return dataA
+        }
+        
+        currentA = currentA?.next
+        currentB = currentB?.next
+    }
+    
+    return nil
+}
+
+
 // 1 2 3 4 5 6
 let node6 = Node(6)
 let node5 = Node(5, node6)
@@ -159,4 +197,8 @@ findMergeBrute(headA: node1, headB: node10) // 4
 
 findMergeSpaceTime(headA: node1, headB: node10) // 4
 
-findMergeInsight(headA: node1, headB: node10)
+findMergeInsight(headA: node1, headB: node10) // 4
+findMergeInsight(headA: node10, headB: node1) // 4
+
+findMergePointInsight(headA: node1, headB: node10) // 4
+findMergePointInsight(headA: node10, headB: node1) // 4
