@@ -62,10 +62,10 @@ extension Node: Equatable {
 func findMergeBrute(headA: Node?, headB: Node?) -> Int? {
     var nodeA = headA
     
-    while nodeA != nil {
+    while nodeA != nil { // O(m)
         var nodeB = headB
         
-        while nodeB != nil {
+        while nodeB != nil { // O(n)
             if nodeA == nodeB {
                 return nodeA?.data
             }
@@ -83,13 +83,13 @@ func findMergeSpaceTime(headA: Node?, headB: Node?) -> Int? {
     var hashA = [Int: Bool]()
     
     var nodeA = headA
-    while let node = nodeA {
+    while let node = nodeA { // O(m)
         hashA[node.data] = true
         nodeA = nodeA?.next
     }
     
     var nodeB = headB
-    while let node = nodeB {
+    while let node = nodeB { // O(n)
         if hashA[node.data] == true {
             return node.data
         }
@@ -140,7 +140,7 @@ private func findMergePoint(bigList: (head: Node?, size: Int), smallList: (head:
 
 
 
-// MARK: - Course solution - #3rd approach
+// MARK: - Course solution - 3rd approach - O(m + 3n) -> O(m + n)
 func findMergePointInsight(headA: Node?, headB: Node?) -> Int? {
     //Figure out which is longer
     let m = length(headA) // O(m)
