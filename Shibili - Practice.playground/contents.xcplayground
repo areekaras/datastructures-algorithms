@@ -10,5 +10,6 @@
         <page name='3 - LinkedList - LengthOfLinkedList'/>
         <page name='3- LinkedList - MergePointTwoLists'/>
         <page name='3 - LinkedList - Detect cycle'/>
+        <page name='4 - Stack'/>
     </pages>
 </playground>
