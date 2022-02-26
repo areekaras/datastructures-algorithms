@@ -32,7 +32,7 @@ class Stack<T> {
         array.isEmpty
     }
     
-    var count: Int {
+    var count: Int {p
         array.count
     }
 }

@@ -11,5 +11,6 @@
         <page name='3- LinkedList - MergePointTwoLists'/>
         <page name='3 - LinkedList - Detect cycle'/>
         <page name='4 - Stack'/>
+        <page name='5 - Queue'/>
     </pages>
 </playground>
