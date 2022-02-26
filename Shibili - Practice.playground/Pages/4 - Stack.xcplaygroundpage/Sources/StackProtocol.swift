@@ -5,7 +5,7 @@ public protocol StackProtocol {
     var isEmpty: Bool { get }
     var count: Int { get }
     
-    func push(_ value: Element)
-    func pop() -> Element?
+    mutating func push(_ value: Element)
+    mutating func pop() -> Element?
 }
 

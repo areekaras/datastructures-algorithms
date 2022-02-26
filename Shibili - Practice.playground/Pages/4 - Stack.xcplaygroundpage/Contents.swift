@@ -16,3 +16,21 @@ intStack.count      // 0
 intStack.isEmpty    // true
 
 
+
+
+
+let intStructStack = Stack<Int>()
+intStructStack.push(1) // [1]
+intStructStack.push(2) // [1, 2]
+intStructStack.push(3) // [1, 2, 3]
+
+intStructStack.peek       // 3
+intStructStack.pop()      // 3
+intStructStack.count      // 2
+intStructStack.isEmpty    // false
+
+intStructStack.pop()      // 2
+intStructStack.pop()      // 1
+intStructStack.peek       // nil
+intStructStack.count      // 0
+intStructStack.isEmpty    // true
