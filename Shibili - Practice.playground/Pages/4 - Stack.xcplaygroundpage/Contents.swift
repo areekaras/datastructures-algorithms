@@ -19,7 +19,7 @@ intStack.isEmpty    // true
 
 
 
-let intStructStack = Stack<Int>()
+var intStructStack = StackStruct<Int>()
 intStructStack.push(1) // [1]
 intStructStack.push(2) // [1, 2]
 intStructStack.push(3) // [1, 2, 3]
