@@ -1,5 +1,7 @@
 
 public struct StackStruct<Element>: StackProtocol {
+    public init() { }
+    
     private var arr = [Element]()
     
     public var peek: Element? {
