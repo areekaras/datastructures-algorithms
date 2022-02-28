@@ -12,6 +12,7 @@
         <page name='3 - LinkedList - Detect cycle'/>
         <page name='4 - Stack'/>
         <page name='4 - Stack - Reverse string'/>
+        <page name='4 - Stack - Balanced Brackets '/>
         <page name='5 - Queue'/>
         <page name='5 - Queue - Cyclic rotation'/>
     </pages>
