@@ -15,6 +15,7 @@
         <page name='4 - Stack - Reverse string'/>
         <page name='4 - Stack - Balanced Brackets '/>
         <page name='5 - Queue'/>
+        <page name='5 - Queue - LinkedList'/>
         <page name='5 - Queue - Cyclic rotation'/>
     </pages>
 </playground>
