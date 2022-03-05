@@ -17,5 +17,6 @@
         <page name='5 - Queue'/>
         <page name='5 - Queue - LinkedList'/>
         <page name='5 - Queue - Cyclic rotation'/>
+        <page name='6 - HashTable'/>
     </pages>
 </playground>
