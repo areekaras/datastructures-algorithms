@@ -1,6 +1,6 @@
 
 class Node {
-    let key: Int
+    var key: Int
     var left: Node?
     var right: Node?
     
@@ -45,7 +45,33 @@ class BST {
     
     //Course Solution
     func findMin() -> Int? {
-        return root?.min.key
+        return findMin(root)?.key
+    }
+    
+    // Delete: Three cases
+    // 1. No child
+    // 2. One child
+    // 3. Two children
+
+    // First two are simple. Third is more complex.
+
+    // Case 1: No child - simply remove from tree by nulling it.
+    //
+    // Case 2: One child - copy the child to the node to be deleted and delete the child
+
+    // Case 3: Two children - re-gig the tree to turn into a Case 1 or a Case 2
+
+    // For third case we first need to
+    // 1. Find the right side min
+    // 2. Copy it to the node we want to delete (creating a duplicate)
+    // 3. Then delete the min value way down on the branch we just copied
+    //
+    // This works because you can represent a binary tree in more than one way.
+    // Here we are taking advantage of that fact to make our more complicated
+    // 3rd case delete more simple by transforming it into case 1.
+    func delete(key: Int) {
+        guard let _ = root else { return }
+        root = delete(&root, key)
     }
     
     //MARK: - Helpers
@@ -85,6 +111,51 @@ class BST {
         
         return nil
         // Note: duplicate keys not allowed so don't need to check
+    }
+    
+    private func findMin(_ node: Node?) -> Node? {
+        return node?.min
+    }
+    
+    private func delete(_ node: inout Node?, _ key: Int) -> Node? {
+        guard node != nil else { return nil }
+        
+        if key > node!.key {
+            node?.right = delete(&node!.right, key)
+        } else if key < node!.key {
+            node?.left = delete(&node!.left, key)
+        } else {
+            // Woohoo! Found you. This is the node we want to delete.
+
+            // Case 1: No child
+            if node?.left == nil && node?.right == nil {
+                node = nil
+            }
+            
+            // Case 2: One child
+            else if node?.left == nil {
+                node = node?.right
+            }
+            
+            else if node?.right == nil {
+                node = node?.left
+            }
+            
+            // Case 3: Two children
+            else {
+                // Find the minimum node on the right (could also find max on the left)
+                let minRight = findMin(node?.right)
+                
+                // Duplicate it by copying its value here
+                node?.key = minRight!.key
+                
+                // Now go ahead and delete the node we just duplicated (same key)
+                node?.right = delete(&node!.right, node!.key)
+            }
+        }
+        
+        
+        return node
     }
     
     func prettyPrint() {
@@ -146,3 +217,8 @@ bst.find(key: 10)
 
 bst.findMin()
 
+bst.delete(key: 2)
+bst.delete(key: 3)
+bst.delete(key: 5)
+
+bst.prettyPrint()
