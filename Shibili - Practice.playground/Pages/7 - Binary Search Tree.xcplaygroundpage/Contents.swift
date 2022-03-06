@@ -7,6 +7,14 @@ class Node {
     init(_ key: Int) {
         self.key = key
     }
+    
+    var min: Node {
+        if left == nil {
+            return self
+        } else {
+            return left!.min
+        }
+    }
 }
 
 class BST {
@@ -15,6 +23,32 @@ class BST {
     func insert(key: Int) {
         root = insert(root, key)
     }
+    
+    func find(key: Int) -> Int? {
+        guard let root = root else { return nil }
+        guard let node = find(root, key) else { return nil }
+        
+        return node.key
+    }
+    
+    /*
+    //Shibili Solution
+    func findMin() -> Int? {
+        var node = root
+        
+        while node?.left != nil {
+            node = node?.left
+        }
+        
+        return node?.key
+    }*/
+    
+    //Course Solution
+    func findMin() -> Int? {
+        return root?.min.key
+    }
+    
+    //MARK: - Helpers
     
     private func insert(_ node: Node?, _ key: Int) -> Node? {
         let newNode = Node(key)
@@ -32,13 +66,6 @@ class BST {
         }
         
         return node
-    }
-    
-    func find(key: Int) -> Int? {
-        guard let root = root else { return nil }
-        guard let node = find(root, key) else { return nil }
-        
-        return node.key
     }
     
     private func find(_ node: Node?, _ key: Int) -> Node? {
@@ -116,3 +143,6 @@ bst.prettyPrint()
 bst.find(key: 5)
 bst.find(key: 6)
 bst.find(key: 10)
+
+bst.findMin()
+
