@@ -74,6 +74,21 @@ class BST {
         root = delete(&root, key)
     }
     
+    //MARK: - Depth first traversals - inorder, preorder, postorder
+    func printInOrderTraversal() {
+        inOrderTraversal(node: root)
+    }
+    
+    func printPreOrderTraversal() {
+        preOrderTraversal(node: root)
+    }
+    
+    func printPostOrderTraversal() {
+        postOrderTraversal(node: root)
+    }
+    
+    
+    
     //MARK: - Helpers
     
     private func insert(_ node: Node?, _ key: Int) -> Node? {
@@ -158,6 +173,27 @@ class BST {
         return node
     }
     
+    private func inOrderTraversal(node: Node?) {
+        guard let node = node else { return }
+        inOrderTraversal(node: node.left)
+        print(node.key)
+        inOrderTraversal(node: node.right)
+    }
+    
+    private func preOrderTraversal(node: Node?) {
+        guard let node = node else { return }
+        print(node.key)
+        preOrderTraversal(node: node.left)
+        preOrderTraversal(node: node.right)
+    }
+    
+    private func postOrderTraversal(node: Node?) {
+        guard let node = node else { return }
+        postOrderTraversal(node: node.left)
+        postOrderTraversal(node: node.right)
+        print(node.key)
+    }
+    
     func prettyPrint() {
         // Hard code debug print of bst with depth = 3
         let rootKey = root?.key ?? 0
@@ -217,8 +253,12 @@ bst.find(key: 10)
 
 bst.findMin()
 
-bst.delete(key: 2)
-bst.delete(key: 3)
-bst.delete(key: 5)
+//bst.delete(key: 2)
+//bst.delete(key: 3)
+//bst.delete(key: 5)
+//
+//bst.prettyPrint()
 
-bst.prettyPrint()
+bst.printInOrderTraversal()
+bst.printPreOrderTraversal()
+bst.printPostOrderTraversal()
