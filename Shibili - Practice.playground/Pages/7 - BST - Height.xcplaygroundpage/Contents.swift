@@ -1,6 +1,8 @@
 /*
  TreeHeight
  https://app.codility.com/programmers/lessons/99-future_training/tree_height/
+ https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search%20Tree
+
  
  Height is the number of steps to the lowest leaf.
  Length of the longest path.
@@ -32,6 +34,7 @@ root.height // 4 // - Course Solution - 1
 
 
 
+
 import XCTest
 
 class Tests: XCTestCase {
@@ -54,17 +57,25 @@ class Tests: XCTestCase {
         XCTAssertEqual(2, root.height) // - Course Solution - 1
     }
     
-//    func testHeightOfThree() {
-//        let tree = Tree(20)
-//        tree.l = Tree(8)
-//        tree.r = Tree(22)
-//        tree.l?.l = Tree(4)
-//        tree.l?.r = Tree(12)
-//        tree.l?.r?.l = Tree(10)
-//        tree.l?.r?.r = Tree(14)
-//
-//        XCTAssertEqual(3, solution(tree))
-//    }
+    // - Couse solution - 2
+    func testHeightOfThree() {
+        XCTAssertEqual(0, height(of: nil))
+        let tree = Tree(20)
+        XCTAssertEqual(0, height(of: tree))
+        
+        tree.left = Tree(8)
+        XCTAssertEqual(1, height(of: tree))
+        
+        tree.right = Tree(22)
+        tree.left?.left = Tree(4)
+        XCTAssertEqual(2, height(of: tree))
+        
+        tree.left?.right = Tree(12)
+        tree.left?.right?.left = Tree(10)
+        tree.left?.right?.right = Tree(14)
+
+        XCTAssertEqual(3, height(of: tree))
+    }
 }
 
 // Infrastructure
