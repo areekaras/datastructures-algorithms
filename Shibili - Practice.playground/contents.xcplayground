@@ -27,5 +27,6 @@
         <page name='9 - Merge Sort'/>
         <page name='9 - Quick Sort - ToBeImple'/>
         <page name='10 - FizzBuzz'/>
+        <page name='11 - Palindrome'/>
     </pages>
 </playground>
