@@ -24,5 +24,6 @@
         <page name='7 - BST - Lowest Common Ancestor'/>
         <page name='8 - Memoization - Fibanocci'/>
         <page name='9 - Bubble Sort'/>
+        <page name='9 - Merge Sort'/>
     </pages>
 </playground>
