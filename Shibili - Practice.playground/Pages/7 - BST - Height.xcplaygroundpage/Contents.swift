@@ -26,7 +26,9 @@ root.right?.right = Node(7)
 root.right?.right?.right = Node(8)
 root.right?.right?.right?.right = Node(9)
 
-getBSTHeight(root: root) // 4
+//getBSTHeight(root: root) // 4 // - Shibili's Solution
+
+root.height // 4 // - Course Solution - 1
 
 
 
@@ -36,7 +38,8 @@ class Tests: XCTestCase {
 
     func testHeightOfZero() {
         let root = Node(5)
-        XCTAssertEqual(0, getBSTHeight(root: root))
+//        XCTAssertEqual(0, getBSTHeight(root: root)) // - Shibili's Solution
+        XCTAssertEqual(0, root.height) // - Course Solution - 1
     }
 
     func testHeightOfTwo() {
@@ -47,7 +50,8 @@ class Tests: XCTestCase {
         root.left?.right = Node(21)
         root.right?.left = Node(1)
 
-        XCTAssertEqual(2, getBSTHeight(root: root))
+//        XCTAssertEqual(2, getBSTHeight(root: root)) // - Shibili's Solution
+        XCTAssertEqual(2, root.height) // - Course Solution - 1
     }
     
 //    func testHeightOfThree() {
