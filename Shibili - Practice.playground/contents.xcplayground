@@ -21,5 +21,6 @@
         <page name='7 - Binary Search Tree'/>
         <page name='7 - BST - isBST?'/>
         <page name='7 - BST - Height'/>
+        <page name='7 - BST - Lowest Common Ancestor'/>
     </pages>
 </playground>
