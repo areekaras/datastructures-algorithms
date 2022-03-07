@@ -25,5 +25,6 @@
         <page name='8 - Memoization - Fibanocci'/>
         <page name='9 - Bubble Sort'/>
         <page name='9 - Merge Sort'/>
+        <page name='9 - Quick Sort - ToBeImple'/>
     </pages>
 </playground>
