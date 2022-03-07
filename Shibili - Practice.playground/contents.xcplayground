@@ -19,5 +19,7 @@
         <page name='5 - Queue - Cyclic rotation'/>
         <page name='6 - HashTable'/>
         <page name='7 - Binary Search Tree'/>
+        <page name='7 - BST - isBST?'/>
+        <page name='7 - BST - Height'/>
     </pages>
 </playground>
