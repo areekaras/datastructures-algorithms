@@ -197,6 +197,7 @@ let cipherAdvanced = CaesarCipherAdvanced()
 cipherAdvanced.encrypt("ABC")                       // DEF
 cipherAdvanced.encrypt("ATTACK AT FIRST LIGHT")     // DWWDFN DW ILUVW OLJKW
 cipherAdvanced.encrypt("MEET AT THE RUBICON")       // PHHW DW WKH UXELFRQ
+   
 
 cipherAdvanced.decrypt("DEF")                       // ABC
 cipherAdvanced.decrypt("DWWDFN DW ILUVW OLJKW")     // ATTACK AT FIRST LIGHT

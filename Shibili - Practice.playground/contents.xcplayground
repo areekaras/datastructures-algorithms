@@ -29,5 +29,6 @@
         <page name='10 - FizzBuzz'/>
         <page name='11 - Palindrome'/>
         <page name='12 - Ransom note'/>
+        <page name='13 - Caesar Cipher'/>
     </pages>
 </playground>
