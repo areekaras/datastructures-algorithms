@@ -30,5 +30,6 @@
         <page name='11 - Palindrome'/>
         <page name='12 - Ransom note'/>
         <page name='13 - Caesar Cipher'/>
+        <page name='14 - String Reversal'/>
     </pages>
 </playground>
