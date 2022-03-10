@@ -32,5 +32,6 @@
         <page name='13 - Caesar Cipher'/>
         <page name='14 - String Reversal'/>
         <page name='15 - Integer Reversal'/>
+        <page name='16 - Anagrams'/>
     </pages>
 </playground>
