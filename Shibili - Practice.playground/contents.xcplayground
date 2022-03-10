@@ -31,5 +31,6 @@
         <page name='12 - Ransom note'/>
         <page name='13 - Caesar Cipher'/>
         <page name='14 - String Reversal'/>
+        <page name='15 - Integer Reversal'/>
     </pages>
 </playground>
