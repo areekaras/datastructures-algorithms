@@ -33,5 +33,6 @@
         <page name='14 - String Reversal'/>
         <page name='15 - Integer Reversal'/>
         <page name='16 - Anagrams'/>
+        <page name='17 - Unique Characters'/>
     </pages>
 </playground>
