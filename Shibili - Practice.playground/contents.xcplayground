@@ -35,5 +35,6 @@
         <page name='16 - Anagrams'/>
         <page name='17 - Unique Characters'/>
         <page name='18 - Permutaion'/>
+        <page name='19 - URLify'/>
     </pages>
 </playground>
