@@ -39,5 +39,6 @@
         <page name='20 - One Edit Away'/>
         <page name='21 - Compressor'/>
         <page name='22 - Remove Duplicate LL'/>
+        <page name='23 - SubTree Checker'/>
     </pages>
 </playground>
