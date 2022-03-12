@@ -40,5 +40,6 @@
         <page name='21 - Compressor'/>
         <page name='22 - Remove Duplicate LL'/>
         <page name='23 - SubTree Checker'/>
+        <page name='24 - MinStack'/>
     </pages>
 </playground>
