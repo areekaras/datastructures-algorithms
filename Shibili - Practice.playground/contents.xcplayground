@@ -41,5 +41,6 @@
         <page name='22 - Remove Duplicate LL'/>
         <page name='23 - SubTree Checker'/>
         <page name='24 - MinStack'/>
+        <page name='25 - HasPairWithSum - Google'/>
     </pages>
 </playground>
