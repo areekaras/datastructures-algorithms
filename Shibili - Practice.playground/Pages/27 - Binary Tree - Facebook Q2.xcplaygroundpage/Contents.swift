@@ -9,6 +9,8 @@
  Question 2 -  Give a binary tree node, write a copy function that duplicates
  the right and left branches of the node.
  
+ Question 3 - Give a binary tree node, write a inOrderTraversal function
+ 
  */
 
 
@@ -31,6 +33,14 @@ class Node {
         }
         return newNode
     }
+    
+    func inOrderTraversal(node: Node?) {
+        guard node != nil else { return }
+        
+        inOrderTraversal(node: node?.left)
+        print(node!.data)
+        inOrderTraversal(node: node?.right)
+    }
 }
 
 
@@ -52,6 +62,9 @@ class Tests: XCTestCase {
         XCTAssertEqual(newCopy.data, node1.data)
         XCTAssertEqual(newCopy.left!.data, node1.left!.data)
         XCTAssertEqual(newCopy.right!.data, node1.right!.data)
+        
+        // print nodes inorder traversal
+        newCopy.inOrderTraversal(node: newCopy)
     }
     
     func testDeepCopy() {
@@ -88,6 +101,9 @@ class Tests: XCTestCase {
         
         // Copy should still point to old value - 8
         XCTAssertEqual(newCopy.right!.right!.data, 8)
+        
+        // print nodes inorder traversal
+        newCopy.inOrderTraversal(node: newCopy)
     }
 }
 
