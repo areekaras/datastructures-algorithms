@@ -43,5 +43,6 @@
         <page name='24 - MinStack'/>
         <page name='25 - HasPairWithSum - Google'/>
         <page name='26 - Array Intersects - Facebook Q1'/>
+        <page name='27 - Binary Tree - Facebook Q2'/>
     </pages>
 </playground>
