@@ -6,8 +6,7 @@
  
  For example:
  
- S = "00-44   48 5555 8361" should become
-     "004-448-555-583-61"
+ S = "00-44   48 5555 8361" should become "004-448-555-583-61"
  
  Assume:
  - S consists only of digits (0-9), spaces, and/or dashses (-)

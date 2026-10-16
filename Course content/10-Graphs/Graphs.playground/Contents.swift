@@ -163,8 +163,8 @@ g.addEdge(v: 3, w: 0)
 g.addEdge(v: 5, w: 2)
 g.addEdge(v: 2, w: 7)
 
-//g.BFS(s: 0)
-print(g.DFS(s: 0))
+g.BFS(s: 0)
+//print(g.DFS(s: 0))
 
 /*
  Graph
